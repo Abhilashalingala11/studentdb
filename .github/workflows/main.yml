@@ -1,4 +1,4 @@
-name: Build Spring Boot Project
+name: Build and Deploy WAR
 
 on:
   push:
@@ -6,18 +6,16 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
 
-      - name: Download Project Code
+      - name: Checkout Project
         uses: actions/checkout@v4
 
-      - name: Install Java
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-
-      - name: Build Project
+      - name: Build WAR File
         run: mvn clean package -DskipTests
+
+      - name: Deploy WAR to Tomcat
+        run: |
+          copy target\*.war C:\Users\NARES\OneDrive\Desktop\apache-tomcat-9.0.117\webapps
