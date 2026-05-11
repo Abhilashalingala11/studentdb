@@ -21,7 +21,7 @@ jobs:
           cache: maven
 
 
-      - name: Build with Maven
+      - name: Build Maven
         run: mvn clean install
 
       - name: Build & push Docker image
