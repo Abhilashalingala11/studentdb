@@ -17,8 +17,8 @@
 	<artifactId>student</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<!-- WAR packaging for Tomcat deployment -->
-	<packaging>war</packaging>
+
+	<packaging>jar</packaging>
 
 	<name>student</name>
 
