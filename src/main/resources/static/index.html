@@ -61,8 +61,10 @@
             .then(data => {
 
                 let table = document.getElementById("table");
+               if(res){
 
-                table.innerHTML = `
+
+                   table.innerHTML = `
             <tr>
                 <th>ID</th>
                 <th>Name</th>
@@ -70,6 +72,10 @@
                 <th>Actions</th>
             </tr>
         `;
+
+               }
+
+
 
                 data.forEach(s => {
                     table.innerHTML += `
