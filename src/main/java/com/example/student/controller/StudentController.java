@@ -18,10 +18,6 @@ public class StudentController {
         return service.addStudent(student);
     }
 
-@GetMapping("/students1")
-public String welcome(){
-       return "Welcome";
-}
 
     @GetMapping("/students")
     public List<student> getStudents() {
